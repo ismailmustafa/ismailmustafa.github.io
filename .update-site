@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# begin in master branch
+
+# Check if commit message input
+if [ -z "$1" ]
+then
+  echo "What changes did you make? Type a commit message."
+  exit 1
+fi
+
+# delte old site
+rm -rf *
+git add -A && git commit -m "delete old site"
+
+# switch to hakyll branch, rebuild website, push branch
+git checkout hakyll
+stack build
+stack exec blog build
+git add -A && git commit -m "update hakyll files"
+git push origin hakyll
+
+# switch to master, extract site and push
+git checkout master
+mv _site/ .
+git add -A && git commit -m $1
+git push origin master
+
