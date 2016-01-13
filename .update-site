@@ -22,7 +22,7 @@ git push origin hakyll
 
 # switch to master, extract site and push
 git checkout master
-mv _site/ .
-git add -A && git commit -m $1
+mv _site/* .
+git add -A && git commit -m "$1"
 git push origin master
 
