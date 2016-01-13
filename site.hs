@@ -2,20 +2,20 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
 import           Hakyll
-import 		     Text.Pandoc
+import           Text.Pandoc
 
 
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyll $ do
     match "static/*/*" $ do
-	route idRoute
-	compile copyFileCompiler
+        route idRoute
+        compile copyFileCompiler
 
     match (fromList ["about.md", "contact.markdown"]) $ do
         route   $ setExtension "html"
         compile $ pandocCompiler
-	    >>= loadAndApplyTemplate "templates/page.html" siteCtx
+            >>= loadAndApplyTemplate "templates/page.html" siteCtx
             >>= loadAndApplyTemplate "templates/default.html" siteCtx
             >>= relativizeUrls
 
