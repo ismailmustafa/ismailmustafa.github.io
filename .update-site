@@ -13,12 +13,10 @@ fi
 rm -rf *
 git add -A && git commit -m "delete old site"
 
-# switch to hakyll branch, rebuild website, push branch
+# switch to hakyll branch and rebuild website
 git checkout hakyll
 stack build
 stack exec blog build
-git add -A && git commit -m "update hakyll files"
-git push origin hakyll
 
 # switch to master, extract site and push
 git checkout master
