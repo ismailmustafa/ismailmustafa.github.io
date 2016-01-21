@@ -1,0 +1,57 @@
+---
+title: Adding a Video to Your iOS App
+---
+
+##Sample Videos
+If you're just learning and want a sample video to mess around with, I got mine from [here](http://techslides.com/sample-webm-ogg-and-mp4-video-files-for-html5/).
+##Basic Setup
+Adding and making a video play in your iOS app is very easy to do. First, let's make a simple application in order for us to actually play a video. Open up a new x-code single view application and go to the storyboard. Once there, drag a button anywhere on the screen. Let's change the text of the button to be "Play video" since its purpose is to play the video.
+
+![Play Video Button Example](/static/img/image1-iosVideo.png)
+
+Then **"ctrl-drag"** that button and create an **action** in ViewController.h. 
+
+``` objective-c
+- (IBAction)playButtonTapped:(id)sender;
+```
+
+##The Actual Video Handling Part
+Next import the mediaplayer framework in **ViewController.m**:
+
+``` objective-c
+#import <MediaPlayer/MediaPlayer.h>
+```
+
+Now create an **MPMoviePlayerViewController** property that will handle playing the movie for us.
+
+``` objective-c
+@property (strong, nonatomic) MPMoviePlayerViewController *moviePlayerViewController;
+```
+
+Next, below the **didReceiveMemoryWarning** method, add the following method:
+
+``` objective-c
+- (void)playMovieWithFilename:(NSString *)filename andType:(NSString *)type
+{
+    NSString *filepath = [[NSBundle mainBundle] pathForResource:filename ofType:type];
+    self.moviePlayerViewController = [[MPMoviePlayerViewController alloc] 
+                                     initWithContentURL:[NSURL fileURLWithPath:filepath]];
+    [self presentMoviePlayerViewControllerAnimated:self.moviePlayerViewController];
+}
+```
+
+We can now call this method from inside of our **playButtonTapped** method like so:
+
+``` objective-c
+- (IBAction)playButtonTapped:(id)sender {
+    [self playMovieWithFilename:@"sampleVideo" andType:@"mp4"];
+}
+```
+
+##Make Sure You Drag Your Video into the Project
+Before going any further, make sure you actually drag your video file into your bundle so that your app can locate it. Now when you run your app, you should be able to just hit **"Play Video"** and watch the video play. If not, then chances are, your video isn't in the copy bundle resources. Go to **Targets** -> **(name of your project)** -> **Build Phases** -> **Copy Bundle Resources** and make sure that your video is in there. If not, just click the **+** button, locate your video file, and add it.
+
+##And Now Play It
+When you press the play button, a new view controller will pop up that should look familiar. Your entire video will play and the view controller will automatically dismiss itself once it's done. You can also pause the video, fast forward, reverse, and adjust the volume. In just a few lines of code, you were able present an entire video playing interface.
+
+![Final Video Player Example](/static/img/image2-iosVideo.png)

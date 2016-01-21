@@ -1,5 +1,5 @@
 <!-- Post Header -->
-<header class="intro-header" style="background-image: url('$baseurl$/static/img/beach.jpg')" alt="" title="">
+<header class="intro-header" style="background-image: url('$baseurl$/static/img/image.png')" alt="" title="">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -45,6 +45,53 @@
 
             </div>
         </div>
+
+
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+
+var getSegment = function (url, index) {
+   return url.replace(/^https?:\/\//, '').split('/')[index];
+}
+
+
+var disqus_config = function () {
+// Set url of page
+this.page.url = document.URL; // Replace PAGE_URL with your page's canonical URL variable
+
+// Determine ident of page
+var lastPartOfLink = getSegment(document.URL,2);
+var res = lastPartOfLink.split(".");
+var ident = res[0];
+this.page.identifier = ident; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//ismailmustafa-blog.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+
     </div>
+
+
+
+
+
 </article>
 <hr>
+
+

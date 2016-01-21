@@ -1,0 +1,163 @@
+---
+title: Arbitrarily Large Numbers in Python
+---
+
+##tl;dr
+If you want a really fast way of handling arbitrarily large number math, use python. It has big number support built right into it.
+
+##What's the point?
+My quest to find a way to handle arbitrarily large numbers began with a simple programming task that involved writing up a method in Objective-c to calculate the nth term in a fibonacci sequence. If recursion is used, the answer turns out to be quite simple:
+
+``` objective-c
+- (NSInteger)fibonacci:(NSInteger)n
+{
+    if (number == 0) {
+        return 0;
+    }
+    else if (number == 1) {
+        return 1;
+    }
+    else {
+        return [self fibonacci:n - 1] + [self fibonacci:n - 2];
+    }
+}
+```
+
+Although elegant, there are two problems with this. The first is that it is outrageously slow. Try to calculate anything above the 47th term and you'll be waiting a few minutes. The second problem is that calculating anything above the 93rd fibonacci term is not possible in the current setup since NSInteger can't hold numbers that large. The second problem depends on a faster more reasonably efficient fibonacci algorithm so let's tackle the first problem first.
+
+##A Better Fibonacci Algorithm
+The problem with using recursion is that in order to calculate **fibonacci:50**, we need to calculate **fibonacci:49**, and **fibonnaci:48** and so on which can become incredibly slow very quickly. If we look at the recursive formula, all we really need to know are the previous two values. We can refactor the algorithm to use an array that stores those two previous values:
+
+``` objective-c
+- (NSInteger)findFiboNumber:(NSInteger)number
+{
+    if (number == 0) {
+        return 0;
+    }
+    else if (number == 1) {
+        return 1;
+    }
+    else {
+        // ---------------------------------------------
+        NSInteger previousValues[2] = {0, 1};
+        for (NSInteger i = 1; i < number; i++) {
+            NSInteger nextNumber = previousValues[0] + previousValues[1];
+            previousValues[0] = previousValues[1];
+            previousValues[1] = nextNumber;
+        }
+        return previousValues[1];
+        // ---------------------------------------------
+    }
+}
+```
+
+The code between the two commented lines is what's different. The **previousValues** array is initialized with the first two terms of the fibonacci sequence. The **nextNumber** is determined by summing the two values of the array. Finally, **previousValues[1]** is moved over to **previousValues[0]** and **previousValues[1]** becomes the **nextNumber**. This algorithm is very time efficient as we will see in the next section.
+
+##A bc Primer
+After browsing the web for a while looking for large number packages I could implement into Objective-c, I stumbled onto something already built into terminal that could do exactly what I wanted and that required no initial set up. **bc**, which stands for basic calculator, is an "arbitrary precision calculator language" (as defined by the man pages). bc is awesome if you want to play with insanely large numbers without have to download any external frameworks. In order to use it, you type:
+
+``` bash
+echo "5 + 5" | bc
+```
+
+It's that simple. Let's try something a little larger:
+
+``` bash
+echo "6^5^6" | bc
+```
+
+The output will probably take over your entire screen. **bc** will handle calculations as large as your hard drive, so as long as you don't run out of hard disk space, you should be able to do crazy large calculations. Just keep in mind that it can take a while to calculate much larger exponents. Calculating **6^6^10** took my computer 198 minutes and the answer sits snugly inside a 15,000 page pdf.
+
+##Other (not all) bc Commands
+Go ahead and try the following:
+
+``` bash
+echo "1043 - 985" | bc
+echo "scale=5;32/45" | bc
+echo "scale=10;sqrt(3)" | bc
+echo "(6+4)*10" | bc
+```
+
+The scale variable tells **bc** how many decimal places you want your answer to have. Just like with everything else in bc, you can take it to the extreme and specify an outrageously high scale. If you're already typing these in and getting numbers that span multiple lines, you'll notice that each line ends with a backslash. bc automatically inserts a backslash and a new line character **'\n'** after every 70 numbers to make it more readable, but this can be annoying if you're trying to pipe one calculation into another. You can remove this by piping the result through the **tr** utility which removes specific characters from any input:
+
+``` bash
+echo "6^6^4" | bc | tr -d '\' | tr -d '\n'
+```
+    
+The **-d** flag tells **tr** to delete all occurences of the following character from the text being piped into it. In this case, we pipe it twice to remove two character.
+
+##Putting it All Together
+Finally, we have a method of calculating arbitrarily large numbers, and a really fast fibonacci sequence calculator. All we need to put it together is to translate our Objective-c code into a shell script that can use **bc**:
+
+``` bash
+1 #!/bin/bash
+2 
+3 echo -n "nth term > "
+4 read input
+5 
+6 prev=(0 1)
+7 
+8 if [ "$input" = "0" ] ; then
+9     echo "0"
+10     exit 0
+11 elif [ "$input" = "1" ] ; then
+12     echo "1"
+13     exit 0
+14 else
+15     for i in `seq 2 $input`
+16     do
+17         next_number=$(echo "${prev[0]} + ${prev[1]}" | bc | tr -d '\' | tr -d '\n')
+18         prev[0]=${prev[1]}
+19         prev[1]=$next_number
+20     done
+21     echo "${prev[1]}"
+22 fi
+```
+ 
+ This shell script is a direct translation of the Objective-c code except for that it asks the user for the nth term and it has **bc** programmed into it. If you want to use this shell script but don't know where to start, I suggest using [this website](http://linuxcommand.org/wss0010.php). It will get you up and running with shell scripts in a matter of minutes. 
+
+##Testing It
+Calculating the 10,000th fibonacci number, something that was impossible using the initial recursive function in Objective-c takes only 30 seconds to evaluate using the above script. I hardcoded **10,000** into the script in order to get a more accurate time reading. 
+
+``` bash
+$ time fibonacci_sequence 
+
+33644764876431783266621612005107543310302148460680063906564769974680081442166662368155595513633734025582065332680836159373734790483865268263040892463056431887354544369559827491606602099884183933864652731300088830269235673613135117579297437854413752130520504347701602264758318906527890855154366159582987279682987510631200575428783453215515103870818298969791613127856265033195487140214287532698187962046936097879900350962302291026368131493195275630227837628441540360584402572114334961180023091208287046088923962328835461505776583271252546093591128203925285393434620904245248929403901706233888991085841065183173360437470737908552631764325733993712871937587746897479926305837065742830161637408969178426378624212835258112820516370298089332099905707920064367426202389783111470054074998459250360633560933883831923386783056136435351892133279732908133732642652633989763922723407882928177953580570993691049175470808931841056146322338217465637321248226383092103297701648054726243842374862411453093812206564914032751086643394517512161526545361333111314042436854805106765843493523836959653428071768775328348234345557366719731392746273629108210679280784718035329131176778924659089938635459327894523777674406192240337638674004021330343297496902028328145933418826817683893072003634795623117103101291953169794607632737589253530772552375943788434504067715555779056450443016640119462580972216729758615026968443146952034614932291105970676243268515992834709891284706740862008587135016260312071903172086094081298321581077282076353186624611278245537208532365305775956430072517744315051539600905168603220349163222640885248852433158051534849622434848299380905070483482449327453732624567755879089187190803662058009594743150052402532709746995318770724376825907419939632265984147498193609285223945039707165443156421328157688908058783183404917434556270520223564846495196112460268313970975069382648706613264507665074611512677522748621598642530711298441182622661057163515069260029861704945425047491378115154139941550671256271197133252763631939606902895650288268608362241082050562430701794976171121233066073310059947366875
+
+real	0m32.559s
+user	0m32.036s
+sys	    0m39.895s
+```
+
+##A Faster and More Elegant Solution
+After looking around for a while longer, I found an even faster solution [here](http://slantedwindows.com/10000th-fibonacci-number-in-under-4ms/). The interesting thing is that it's the exact same algorithm I use, except it's coded up in python. The code is shown below:
+
+``` python
+1 #!/usr/bin/python 
+2  
+3 def fib(length): 
+4     first, second = 1,1 
+5     if length < 2: 
+6         return length 
+7     else: 
+8         length -= 2 
+9         for i in range(length): 
+10             second, first = first+second, second 
+11     return second 
+12  
+13 answer = fib(10000); 
+14 print answer
+```
+
+This is a direct translation of the Objective-c code and shell script I used except for one thing. Python can assign two variables at the same time without the need for using a temporary variable. Although this looks cool, using a temporary variable results in the same time efficiency. Running this python script to find the 10,000th fibonacci number is blazingly fast and took me only 56 ms:
+
+``` bash
+real	0m0.056s
+user	0m0.015s
+sys	    0m0.014s
+```
+
+That is insanely fast. I was also able to calculate the 1 millionth fibonacci number in just 12 seconds. The reason why it's so fast is because python has a big number package built directly into it. If you have python 2.5 and above, python will transparently default to using this for sufficiently large numbers. With **bc** on the other hand, you have to pipe an equation through to it on every iteration of the algorithm which really slows down the program. 
+
+##Conclusion
+So if you're doing any large number math and speed is a concern, use python. It's much faster and the setup up is much easier (read nonexistent). What took me several days of searching the web I was able to do in 14 lines of python code. 

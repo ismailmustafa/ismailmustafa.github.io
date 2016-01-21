@@ -12,7 +12,7 @@ main = hakyll $ do
         route idRoute
         compile copyFileCompiler
 
-    match (fromList ["about.md", "contact.markdown"]) $ do
+    match (fromList ["about.md", "contact.markdown", "projects.md"]) $ do
         route   $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/page.html" siteCtx
@@ -57,7 +57,6 @@ main = hakyll $ do
 
     match "templates/*" $ compile templateCompiler
 
-
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =
@@ -66,11 +65,12 @@ postCtx =
 
 siteCtx :: Context String
 siteCtx = 
-    constField "baseurl" "http://ismailmustafa.github.io" `mappend` 
-    ---constField "baseurl" "http://127.0.0.1:8000" `mappend`
-    constField "site_description" "my beautiful blog" `mappend`
-    constField "instagram_username" "katychuang.nyc" `mappend`
-    constField "twitter_username" "katychuang" `mappend`
-    constField "github_username" "katychuang" `mappend`
-    constField "google_username" "katychuang" `mappend`
+    ---constField "baseurl" "http://ismailmustafa.github.io" `mappend` 
+    constField "baseurl" "http://127.0.0.1:8000" `mappend`
+    constField "site_description" "Mustafa's Musings" `mappend`
+    ---constField "instagram_username" "katychuang.nyc" `mappend`
+    constField "twitter_username" "ijmustafa" `mappend`
+    constField "github_username" "ismailmustafa" `mappend`
+    ---constField "google_username" "katychuang" `mappend`
+    constField "linkedin_username" "ijmustafa" `mappend`
     defaultContext

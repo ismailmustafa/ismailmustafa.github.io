@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="$baseurl$" id="blog-title-left-top">I</a>
+            <a class="navbar-brand" href="$baseurl$" id="blog-title-left-top">IM</a>
         </div>   
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -18,12 +18,14 @@
                     <a href="#portfolioModal2" data-toggle="modal"><i class="fa fa-random" id="icon-top"></i></a>
                 <ul class="dropdown-menu"></ul>
                 </li>
+                $if(instagram_username)$
 	           <li><a href="https://instagram.com/$instagram_username$/" target="_blank"><i class="fa fa-instagram" id="icon-top"></i></a></li>
+               $endif$
                 <li><a href="$baseurl$/about.html" target="_self">About</a></li>
                 <li><a href="$baseurl$/contact.html" target="_self">Contact</a></li>
-
+                <li><a href="$baseurl$/projects.html" target="_self">Projects</a></li>
                 <li><a href="$baseurl$/archive.html" target="_self">Archive</a></li>
-                <li><a href="https://www.twitter.com/$twitter_username$" id="roundbutton" target="_blank"><i class="fa fa-twitter"></i>KatyChuang</a></li>
+                <li><a href="https://www.github.com/$github_username$" id="roundbutton" target="_blank"><i class="fa fa-github"></i>ismailmustafa</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -45,14 +47,14 @@
                         <div class="modal-body">
                             <h1 class="font-style-inline-small-h1">Ismail Mustafa</h1>
                             <hr class="star-primary">
-                            <img src="$baseurl$/static/img/kc.jpg" class="img-responsive img-centered" alt="" title="">
+                            <img src="$baseurl$/static/img/face.jpg" class="img-responsive img-centered" alt="" title="">
                             <p class="font-style-inline-small">
-                                Hello, my name is Lucas Gatsas, I'm a Front End Engineer <br>
-                                and Web Developer from Switzerland. This is my Personal Notice and Archive Work Experience Work Blog. My Official Website will be Up soon!  <br>
-                                <a href="https://www.twitter.com/katychuang" target="_blank">follow me</a>. <br> 
-                                <a href="https://www.github.com/katychuang" target="_blank">    <i class="fa fa-github" id="spaceg-social-modal"></i> </a> 
-                                <a href="https://www.twitter.com/katychuang" target="_blank"><i class="fa fa-twitter" id="spaceg-social-modal"></i> </a>    
-                                <a href="https://plus.google.com/u/0/111391719267336703432/posts" target="_blank"> <i class="fa fa-google-plus" id="spaceg-social-modal"></i></a> 
+                                Hello, my name is Ismail Mustafa, I'm a Master's Student in Computer Science <br>
+                                at NYU. Thanks for taking the time to visit my blog. I hope you like it! <br>
+                                <a href="https://www.twitter.com/ijmustafa" target="_blank">follow me</a>. <br> 
+                                <a href="https://www.github.com/ismailmustafa" target="_blank">    <i class="fa fa-github" id="spaceg-social-modal"></i> </a> 
+                                <a href="https://www.twitter.com/ijmustafa" target="_blank"><i class="fa fa-twitter" id="spaceg-social-modal"></i> </a>    
+                                <a href="https://linkedin.com/in/ijmustafa" target="_blank"> <i class="fa fa-linkedin" id="spaceg-social-modal"></i></a> 
                             </p>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
@@ -74,15 +76,16 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h1 class="font-style-inline-small-h1">k.c</h1>
+                            <h1 class="font-style-inline-small-h1">i.m</h1>
                             <hr class="star-primary">
                             <p class="font-style-inline-small">
                         <a href="https://www.twitter.com/$twitter_username$" target="_blank">follow</a>. <br> 
                         <a href="https://www.github.com/$github_username$" target="_blank">    <i class="fa fa-github" id="spaceg-social-modal"></i> </a> 
                         <a href="https://www.twitter.com/$twitter_username$" target="_blank"><i class="fa fa-twitter" id="spaceg-social-modal"></i> </a>    
-                        <a href="https://plus.google.com/u/0/111391719267336703432/posts" target="_blank"> <i class="fa fa-google-plus" id="spaceg-social-modal"></i></a>  <br>
+                        <a href="https://linkedin.com/in/$linkedin_username$" target="_blank"> <i class="fa fa-linkedin" id="spaceg-social-modal"></i></a>  <br>
                     <li><a href="$baseurl$/" target="_self">Home</a></li>
                     <li><a href="$baseurl$/about.html" target="_self">About Me</a></li>
+                    <li><a href="$baseurl$/projects.html" target="_self">Projects</a></li>
                     <li><a href="$baseurl$/archive.html" target="_self">Archive</a></li>
                             </p>
                       
