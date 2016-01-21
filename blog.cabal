@@ -14,8 +14,18 @@ cabal-version:       >=1.10
 
 executable blog
   main-is:             site.hs
+  other-modules:       FractalArt
   default-language:    Haskell2010
   ghc-options:         -threaded
   build-depends:       base == 4.*,
                        hakyll == 4.7.*,
-                       pandoc
+                       pandoc,
+                       filepath,
+                       directory,
+                       bytestring,
+                       split,
+                       random,
+                       mwc-random,
+                       primitive,
+                       vector,
+                       JuicyPixels

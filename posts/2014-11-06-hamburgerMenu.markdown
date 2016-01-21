@@ -1,5 +1,6 @@
 ---
 title: Creating a Hamburger Menu With the "Just in Mind" Wireframing Tool
+headerImg: 2014-11-06-hamburgerMenu.png
 ---
 
 I recently came across this really cool wireframing tool called [Just In Mind](http://www.justinmind.com/) which is awesome because you can create interactive demos of your app that look great. Some samples of what these live demos look like can be found [here](http://www.justinmind.com/examples).

@@ -1,5 +1,6 @@
 ---
 title: How to Create Your Own CocoaPod
+headerImg: 2014-10-27-cocoapods.png
 ---
 
 The official CocoaPods website has a [great article](http://guides.cocoapods.org/making/making-a-cocoapod.html) on how to create a CocoaPod. While detailed, I had a lot of trouble following it because the information was very scattered and there wasn't much of a clear flow especially for a beginner like me. As a result, I've decided to attempt to make a guide that you can use to create your first CocoaPod.

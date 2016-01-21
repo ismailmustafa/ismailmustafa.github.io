@@ -1,5 +1,6 @@
 ---
 title: Introduction to Core Motion
+headerImg: 2014-11-17-coremotion.png
 ---
 
 Recently, I've been playing with the coremotion framework provided by apple in order to get accelerometer and gyroscope updates from my phone. Setting it up is actually surprisingly easy. 

@@ -1,5 +1,6 @@
 ---
 title: Sending Data Back to a Previous View Controller
+headerImg: 2014-10-20-delegates.png
 ---
 
 ##tl;dr

@@ -1,5 +1,6 @@
 ---
 title: Adding a Video to Your iOS App
+headerImg: 2014-10-13-iosVideo.png
 ---
 
 ##Sample Videos
