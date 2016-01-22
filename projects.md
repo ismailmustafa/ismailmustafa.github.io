@@ -1,6 +1,6 @@
 ---
 title: Projects
-headerImg: beach.jpg
+headerImg: projects.jpg
 ---
 
 ## Rubik's Hacks - October 2015
