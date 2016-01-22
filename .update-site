@@ -15,7 +15,6 @@ git add -A && git commit -m "delete old site"
 
 # switch to hakyll branch and rebuild website
 git checkout hakyll
-rm -rf .stack-work/
 stack build
 stack exec blog rebuild
 
