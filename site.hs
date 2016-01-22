@@ -158,7 +158,7 @@ postCtx =
 
 siteCtx :: Context String
 siteCtx = 
-    constField "baseurl" "http://ismailmustafa.github.io" `mappend` 
+    constField "baseurl" "http://ismailmustafa.com" `mappend` 
     --constField "baseurl" "http://127.0.0.1:8000" `mappend`
     constField "site_description" "Mustafa's Musings" `mappend`
     --constField "instagram_username" "katychuang.nyc" `mappend`
