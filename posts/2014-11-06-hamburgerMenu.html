@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <!-- 
+      loads the http over https ssl - 
+      welcome to my website! 
+
+	this theme is based off the Ice & Fire theme created by Lucas Gatsas
+      https://www.twitter.com/LucasGatsas
+      www.lucasgatsas.ch - switzerland. 
+                                                    --> 
+
+<!--
+<script type="text/javascript">
+var host = "https://katychuang.me/";
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+</script>
+-->
+<!-- Microsoft Internet Explorer documentMode compatMode setting IE Modus --> 
+<script type="text/javascript">
+var IE = null;
+if (window.navigator.appName == "Microsoft Internet Explorer") {
+  if (document.documentMode) {
+  
+    IE = document.documentMode; 
+    } else {
+   
+        IE = 5; 
+          if (document.compatMode) {
+      if (document.compatMode == "CSS1Compat")
+      IE = 11; 
+      }
+    }
+  }
+</script>
+
+    <meta charset="utf-8">
+    <!-- X-UA --> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <link rel="author" title="Katy Chuang" href="https://plus.google.com/u/0/111391719267336703432/posts" />
+
+
+    <meta name="google" content="notranslate" />
+    <!-- Viewport --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- index ROBOTS follow --> 
+    <meta name="robots" content="index, follow" />
+    <!-- Site Desciption --> 
+    <meta name="description" content="Mustafa's Musings">
+        <!-- Site Desciption --> 
+    <meta name="keywords" content="Ismail Mustafa, ijmustafa, ismailmustafa, Software Engineer, iOS Developer, iOS Engineer, iOS">
+    <!-- Favicon --> 
+    <link rel="shortcut icon" href="http://127.0.0.1:8000/static/img/ico.png" type="image/x-icon" />
+    <!-- Blog Title -->
+    <title>Mustafa's Musings</title>
+
+    <!--     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+--> 
+    <!-- Property Metas --> 
+    <meta property="og:image" content="http://127.0.0.1:8000/static/img/ix.png" />
+    <meta property="og:title" content="Mustafa's Musings" />
+    <meta property="og:site_name" content="Mustafa's Musings" />
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="http://127.0.0.1:8000/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/static/css/spaceg.stylesheets.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+	#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:url("/static/img/preloader.gif"); /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */}
+	ul, ol {margin-top: 0;margin-bottom: 10px;}
+	.navbar-inverse {background-color: #FFF;border-color: #FFFFFF;}
+</style> 
+<!--link rel="stylesheet" href="http://127.0.0.1:8000/static/css/prettify.css"-->
+<style>
+	header.intro-header {background: #6f5499;background: no-repeat center center;background-attachment: scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}
+	/* Preloader */#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:; /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */} 
+	li {list-style: none;}
+            body.modal-open 
+            {overflow: hidden;padding-right: 0px;
+        }
+	article li {list-style: inherit;}
+	article .figure {text-align: center}
+    </style>
+    <!-- end Loading front stylesheet here --> 
+    </head>
+
+    <body>
+	<div id="preloader">
+	    <div id="status">
+
+	    </div>
+
+	</div>  
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://127.0.0.1:8000" id="blog-title-left-top">IM</a>
+        </div>   
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#portfolioModal2" data-toggle="modal"><i class="fa fa-random" id="icon-top"></i></a>
+                <ul class="dropdown-menu"></ul>
+                </li>
+                
+                <li><a href="http://127.0.0.1:8000/about.html" target="_self">About</a></li>
+                <li><a href="http://127.0.0.1:8000/contact.html" target="_self">Contact</a></li>
+                <li><a href="http://127.0.0.1:8000/projects.html" target="_self">Projects</a></li>
+                <li><a href="http://127.0.0.1:8000/archive.html" target="_self">Archive</a></li>
+                <li><a href="https://www.github.com/ismailmustafa" id="roundbutton" target="_blank"><i class="fa fa-github"></i>ismailmustafa</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<!-- Portfolio Modals -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true" style="padding-right:0px; overflow: hidden;">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h1 class="font-style-inline-small-h1">Ismail Mustafa</h1>
+                            <hr class="star-primary">
+                            <img src="http://127.0.0.1:8000/static/img/face.jpg" class="img-responsive img-centered" alt title>
+                            <p class="font-style-inline-small">
+                                Hello, my name is Ismail Mustafa, I'm a Master's Student in Computer Science <br>
+                                at NYU. Thanks for taking the time to visit my blog. I hope you like it! <br>
+                                <a href="https://www.twitter.com/ijmustafa" target="_blank">follow me</a>. <br> 
+                                <a href="https://www.github.com/ismailmustafa" target="_blank">    <i class="fa fa-github" id="spaceg-social-modal"></i> </a> 
+                                <a href="https://www.twitter.com/ijmustafa" target="_blank"><i class="fa fa-twitter" id="spaceg-social-modal"></i> </a>    
+                                <a href="https://linkedin.com/in/ijmustafa" target="_blank"> <i class="fa fa-linkedin" id="spaceg-social-modal"></i></a> 
+                            </p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Menu Modals Add New Sa.21.Feb.2015 03:22:25 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true" style="padding-right:0px; overflow: hidden;">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h1 class="font-style-inline-small-h1">i.m</h1>
+                            <hr class="star-primary">
+                            <p class="font-style-inline-small">
+                        <a href="https://www.twitter.com/ijmustafa" target="_blank">follow</a>. <br> 
+                        <a href="https://www.github.com/ismailmustafa" target="_blank">    <i class="fa fa-github" id="spaceg-social-modal"></i> </a> 
+                        <a href="https://www.twitter.com/ijmustafa" target="_blank"><i class="fa fa-twitter" id="spaceg-social-modal"></i> </a>    
+                        <a href="https://linkedin.com/in/ijmustafa" target="_blank"> <i class="fa fa-linkedin" id="spaceg-social-modal"></i></a>  <br>
+                    <li><a href="http://127.0.0.1:8000/" target="_self">Home</a></li>
+                    <li><a href="http://127.0.0.1:8000/about.html" target="_self">About Me</a></li>
+                    <li><a href="http://127.0.0.1:8000/projects.html" target="_self">Projects</a></li>
+                    <li><a href="http://127.0.0.1:8000/archive.html" target="_self">Archive</a></li>
+                            </p>
+                      
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+        <div id="content">
+            <!-- Post Header -->
+
+<header class="intro-header" style="background-image: url('http://127.0.0.1:8000/static/img/2014-11-06-hamburgerMenu.png')" alt title>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Creating a Hamburger Menu With the "Just in Mind" Wireframing Tool</h1>
+                    
+                    <span class="meta">
+		    
+			November  6, 2014
+		    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+			<p>I recently came across this really cool wireframing tool called <a href="http://www.justinmind.com/">Just In Mind</a> which is awesome because you can create interactive demos of your app that look great. Some samples of what these live demos look like can be found <a href="http://www.justinmind.com/examples">here</a>.</p>
+<h2 id="dont-use-their-tutorial">Don’t Use Their Tutorial</h2>
+<p>You can find a hamburger menu tutorial created by Just In Mind <a href="http://www.justinmind.com/support/slide-menu/">here</a>, but I don’t like the approach they took. If you notice, all they did was create the view, then when the button is pressed, it goes to an entirely new screen with the hamburger menu taking up a significant portion of the screen. While the effect is the same, during the middle of the animation, you see the right part of the first view repeating. This can easily be seen with their live demo <a href="https://www.justinmind.com/usernote/tests/4/1765/12529460/index.html#/screens/68503a7d-e959-40d2-95b6-e671729aeb29">here</a>. Just press the hamburger menu button several times until you notice the middle repeating part.</p>
+<h2 id="laying-out-the-initial-view-controller">Laying Out the Initial View Controller</h2>
+<p>My tutorial is a little more involved, but the result is so much more satisfying. Start by opening up Just In Mind and selecting iPhone 5 in portrait. Now lay out the main screen according to however you want it to look. I’m making an app for my sister’s clothing boutique back in the U.A.E (<a href="http://instagram.com/theluxuryarcade">The Luxury Arcade</a>), so I started by laying out a simple navigation bar at the top. You can find this in the widgets menu on the left side. Everything I added including the hamburger menu button and labels should be there. The navigation menu should be under “bars”, and the hamburger button is under “icons”. Labels can be found under “basic”.</p>
+<div class="figure">
+<img src="../static/img/image1-hamburgerMenu.png" alt="Adding the navigation bar" />
+<p class="caption">Adding the navigation bar</p>
+</div>
+<p>Then I included three images of some twitter posts from the boutique’s feed to make it look like a table view. Adding images is as simple as dragging it into the prototyping window.</p>
+<div class="figure">
+<img src="../static/img/image2-hamburgerMenu.png" alt="Adding twitter posts" />
+<p class="caption">Adding twitter posts</p>
+</div>
+<p>Everything snaps to a grid so it’s really easy to align views.</p>
+<h2 id="adding-the-hamburger-menu">Adding the Hamburger Menu</h2>
+<p>Attaching the hamburger menu is as easy as dragging a view to the left or right side so that it is off the screen. I like to put it on the left since that seems to be the more commonly used side. Start by adding an extension to the navigation bar but reducing the width to be more inline with how wide a hamburger menu should be. I picked an arbitrary width of 250 pixels since that’s what I thought looked best.</p>
+<div class="figure">
+<img src="../static/img/image3-hamburgerMenu.png" alt="Add hamburger menu navigation bar" />
+<p class="caption">Add hamburger menu navigation bar</p>
+</div>
+<p>I also added a “menu” label just so it didn’t look so bare. Now, add the rest of the hamburger menu items including a large rectangle to represent the body of the hamburger menu. After playing around for a while, I got mine to look like this:</p>
+<div class="figure">
+<img src="../static/img/image4-hamburgerMenu.png" alt="Final view before animation" />
+<p class="caption">Final view before animation</p>
+</div>
+<p>Don’t worry, the part that is not in the screen will not show up in the simulation. You can even check for yourself by clicking the green “simulate” button in the top right.</p>
+<h2 id="creating-a-dynamic-panel">Creating a Dynamic Panel</h2>
+<p>Since we can only animate single views, we are going to have to group everything into something called a dynamic panel. If you are familiar with photoshop, this is just like “flattening” an image.</p>
+<div class="figure">
+<img src="../static/img/image5-hamburgerMenu.png" alt="Dynamic panel" />
+<p class="caption">Dynamic panel</p>
+</div>
+<h2 id="adding-another-hamburger-menu-button">Adding Another Hamburger Menu Button</h2>
+<p>Now that we have created a dynamic panel out of all the views we put together, we can no longer create an action associated with the initial button we placed. To fix this, we need to add another button directly on top of the initial one. Make sure it’s perfectly in line with the previous button. You can use the arrow keys to move the position of the button as well. You may be thinking “why did we even group the button into the dynamic panel if we needed it to be active?”. The answer is that we can only move a single view at a time, so if we didn’t include the button in the dynamic panel, we would have had to move the hamburger menu into the screen and then place the button back in the right place which would result in a small period of time inbetween where the button dissapears on the screen. By including the button in the dynamic panel, we can ensure that during the animation, the button will appear to move along with the animation. This will make more sense later.</p>
+<div class="figure">
+<img src="../static/img/image6-hamburgerMenu.png" alt="Adding another menu bar button" />
+<p class="caption">Adding another menu bar button</p>
+</div>
+<p>Remember! You can align any view more precisely with the arrow keys.</p>
+<h2 id="adding-events">Adding Events</h2>
+<p>In order to create the animation, we need to create five events. The events will perform the following actions:</p>
+<ol style="list-style-type: decimal">
+<li>Hide the menu bar button item.</li>
+<li>Move the hidden menu bar button item to its final correct position 250 pixels to the right.</li>
+<li>Move the entire dynamic panel 250 pixels to the right.</li>
+<li>Unhide the menu bar button item.</li>
+</ol>
+<h3 id="hide-the-menu-bar-item">1. Hide the Menu Bar Item</h3>
+<p>Click on the hamburger menu button. You’ll notice at the bottom there is a menu with “event” as one of the tabs. Under the “Events” tab, click “Add Event”.</p>
+<div class="figure">
+<img src="../static/img/image7-hamburgerMenu.png" alt="Click add event button" />
+<p class="caption">Click add event button</p>
+</div>
+<p>Check to see that at the very top left, “On Tap” is selected since we want the action to be performed when we tap the button. On the left menu, click on “Show/Hide” and make sure the bar button item is still selected in the “Outline” pane on the right. Then select the “Hide” radio button at the top and click okay.</p>
+<div class="figure">
+<img src="../static/img/image8-hamburgerMenu.png" alt="Add event menu" />
+<p class="caption">Add event menu</p>
+</div>
+<p>You’ll notice that a new event has been added with “Hide” written underneath it. You’ve just officially hidden the bar button item. If you click simulate, you won’t be able to see it happening since the other bar button item is still behind it but I assure you that it is indeed hiding.</p>
+<div class="figure">
+<img src="../static/img/image9-hamburgerMenu.png" alt="New event added" />
+<p class="caption">New event added</p>
+</div>
+<h3 id="move-the-hidden-menu-bar-button-item-to-its-final-correct-position-250-pixels-to-the-right">2. Move the hidden menu bar button item to its final correct position 250 pixels to the right</h3>
+<p>Right click on the new action you just created and click “Add Action”. This will add another action that will occur right after the “hide” action. You can add as many actions as you like and they will all be performed in the order that you added them.</p>
+<div class="figure">
+<img src="../static/img/image10-hamburgerMenu.png" alt="Adding a new action" />
+<p class="caption">Adding a new action</p>
+</div>
+<p>This time, select “Move” on the left side since we want to move the button. Make sure the bar button item is still selected in the outline. Change the radio button to “To Position”. Then adjust the left value to 258. This effectively moves the bar button 250 pixels to the right. Finally, set the “Easing” to “None”. This ensure that the buttons is not animated to its final position and that no time is wasted moving it to its final position. We are doing this because button is hidden and there is no need to animate something that is hidden.</p>
+<div class="figure">
+<img src="../static/img/image11-hamburgerMenu.png" alt="Modifying the action" />
+<p class="caption">Modifying the action</p>
+</div>
+<h3 id="move-the-entire-dynamic-panel-250-pixels-to-the-right">3. Move the Entire Dynamic Panel 250 Pixels To the Right</h3>
+<p>Add yet another action but this time with the following parameters:</p>
+<div class="figure">
+<img src="../static/img/image12-hamburgerMenu.png" alt="Dynamic panel movement settings" />
+<p class="caption">Dynamic panel movement settings</p>
+</div>
+<p>Select move in the left panel. Check the “By Offset” radio button and set the offset to 250. The easing should be set to “Linear” and finally, leave the duration at its default value of 500 ms. Make sure that the dynamic panel is selected in the outline on the right this time.</p>
+<h3 id="unhide-the-menu-bar-button-item">4. Unhide the Menu Bar Button Item</h3>
+<p>Add another action with the following settings:</p>
+<div class="figure">
+<img src="../static/img/image13-hamburgerMenu.png" alt="Show button action" />
+<p class="caption">Show button action</p>
+</div>
+<p>All we are doing here is unhiding the bar button item which is the opposite of the first action. Awesome! So now when we test it in the simulator, clicking the button makes the hamburger menu appear. Alright what happens if we click the button again?</p>
+<div class="figure">
+<img src="../static/img/image14-hamburgerMenu.gif" alt="Not yet finished" />
+<p class="caption">Not yet finished</p>
+</div>
+<p>Uh oh… We never created an event to reverse everything, so it just repeats the event we previously created and keeps moving to the right another 250 pixels.</p>
+<h2 id="create-another-screen">Create Another Screen</h2>
+<p>Before we can reverse the action, we need to create a new screen so that we have a button with no events attached to work with. In the top right, click the plus button under the tab “Screens”:</p>
+<div class="figure">
+<img src="../static/img/image15-hamburgerMenu.png" alt="Adding a new screen" />
+<p class="caption">Adding a new screen</p>
+</div>
+<p>Name the screen “Menu Shown”, or whatever else you want to call it as long as it makes sense to you:</p>
+<div class="figure">
+<img src="../static/img/image16-hamburgerMenu.png" alt="Menu Shown" />
+<p class="caption">Menu Shown</p>
+</div>
+<p>Now copy everything from the “Main Screen” including the extra bar button you added. Just highlight everything. Now paste it into the new “Menu Shown” screen and position so it looks like the menu is being shown:</p>
+<div class="figure">
+<img src="../static/img/image17-hamburgerMenu.png" alt="Menu shown screen" />
+<p class="caption">Menu shown screen</p>
+</div>
+<h2 id="link-the-main-screen-to-the-menu-shown-screen">Link the Main Screen to the Menu Shown Screen</h2>
+<p>Go back to the “Main Screen” and click on the hamburger menu button. Now add a final new action under the same event. This time, select the first option in the left pane “Link To” and then select the “Menu Shown” screen under “Screens”. Leave everything else the same or as shown in the picture and press okay.</p>
+<div class="figure">
+<img src="../static/img/image18-hamburgerMenu.png" alt="Link main screen to menu shown screen" />
+<p class="caption">Link main screen to menu shown screen</p>
+</div>
+<p>Now go into the new “Menu Shown” screen, click on the hamburger bar button, and delete all the actions associated with it. You can do this by clicking on the red ‘X’ under the events tab:</p>
+<div class="figure">
+<img src="../static/img/image19-hamburgerMenu.png" alt="delete actions" />
+<p class="caption">delete actions</p>
+</div>
+<p>This will make sure that the button doesn’t cause the view to animate to the right another 250 pixels.</p>
+<div class="figure">
+<img src="../static/img/image20-hamburgerMenu.gif" alt="New screen" />
+<p class="caption">New screen</p>
+</div>
+<h2 id="reversing-the-process">Reversing the Process</h2>
+<p>Now we are going to reverse the series of actions we just created except we will do this on the new screen we made (“Menu Shown”). The steps we will take are as follows:</p>
+<ol style="list-style-type: decimal">
+<li>Hide the menu bar button item.</li>
+<li>Move the hidden menu bar button item to its final correct position 250 pixels to the left.</li>
+<li>Move the entire dynamic panel 250 pixels to the left.</li>
+<li>Unhide the menu bar button item.</li>
+<li>Link the “Menu Shown” screen back to the “Main Screen”</li>
+</ol>
+<h3 id="hide-the-menu-bar-button-item">1. Hide the Menu Bar Button Item</h3>
+<p>Click on the hamburger bar button and add a new event. Create an action with the same settings as you did before:</p>
+<div class="figure">
+<img src="../static/img/image21-hamburgerMenu.png" alt="hide menu button" />
+<p class="caption">hide menu button</p>
+</div>
+<h3 id="move-the-hidden-menu-bar-button-item-to-its-final-correct-position-250-pixels-to-the-left">2. Move the Hidden Menu Bar Button Item to Its Final Correct Position 250 Pixels to the Left</h3>
+<p>Once again this is the same as before except we are now setting the value of “Left” to 8 pixel, the original distance the hamburger button was from the left:</p>
+<div class="figure">
+<img src="../static/img/image22-hamburgerMenu.png" alt="Move menu button back" />
+<p class="caption">Move menu button back</p>
+</div>
+<h3 id="move-the-entire-dynamic-panel-250-pixels-to-the-left">3. Move the Entire Dynamic Panel 250 Pixels to the Left</h3>
+<p>Once again, all the settings are the same except this time, the offset value is -250 (notice the negative sign). This is because we are moving it to the left.</p>
+<div class="figure">
+<img src="../static/img/image23-hamburgerMenu.png" alt="Move dynamic panel back" />
+<p class="caption">Move dynamic panel back</p>
+</div>
+<h3 id="unhide-the-menu-bar-button-item-1">4. Unhide the Menu Bar Button Item</h3>
+<p>Repeat step one but select “show” this time.</p>
+<div class="figure">
+<img src="../static/img/image24-hamburgerMenu.png" alt="Unhide the menu bar Button" />
+<p class="caption">Unhide the menu bar Button</p>
+</div>
+<h3 id="link-the-menu-shown-screen-back-to-the-main-screen">5. Link the “Menu Shown” Screen Back to the “Main Screen”</h3>
+<p>Finally, we want to create a link back to the “Main Screen” so that when we click the button again, it performs the correct action as dictated by the main screen. This way the button should cause the hamburger menu to toggle open and closed.</p>
+<div class="figure">
+<img src="../static/img/image25-hamburgerMenu.png" alt="link menu shown to main menu" />
+<p class="caption">link menu shown to main menu</p>
+</div>
+<h2 id="and-finally-were-done">And Finally We’re Done!</h2>
+<p>The hamburger menu opens and closes as it should without that extra repeating panel in the middle of the animation.</p>
+<div class="figure">
+<img src="../static/img/image26-hamburgerMenu.gif" alt="Final app" />
+<p class="caption">Final app</p>
+</div>	
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    
+                </ul>
+
+            </div>
+        </div>
+
+
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+
+var getSegment = function (url, index) {
+   return url.replace(/^https?:\/\//, '').split('/')[index];
+}
+
+
+var disqus_config = function () {
+// Set url of page
+this.page.url = document.URL; // Replace PAGE_URL with your page's canonical URL variable
+
+// Determine ident of page
+var lastPartOfLink = getSegment(document.URL,2);
+var res = lastPartOfLink.split(".");
+var ident = res[0];
+this.page.identifier = ident; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//ismailmustafa-blog.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+    </div>
+
+
+
+
+
+</article>
+<hr>
+
+
+
+        </div>
+        <div id="footer">
+        </div>
+      <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        
+                    
+                    <li>
+                        <a href="https://twitter.com/ijmustafa" data-datatype="json" data-type="GET" data-target="#frame" class="reload" id="clickme" target="_blank">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                     
+                     
+                    <li>
+                        <a href="https://github.com/ismailmustafa" target="_blank">
+                            <span class="fa-stack fa-lg">
+
+                                <i class="fa fa-arrow-circle-o-down"></i>
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                     
+                    <li>
+                        <a href="https://linkedin.com/in/ijmustafa" target="_blank">
+                            <span class="fa-stack fa-lg">
+
+                                <i class="fa fa-arrow-circle-o-down"></i>
+                                <i class="fa fa-circle fa-stack-1x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+		    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; ismailmustafa 2016. <br><br> 
+                </p>
+<div class="col-md-12">
+     <p class="copyright text-muted">
+            Site generated by
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>. Modified theme inspired by
+      <!-- ICE AND FIRE THEME https://github.com/SpaceG/iceandfire -->
+      <a href="https://github.com/SpaceG/CleanMagicMedium-Jekyll">CleanMagic</a>
+        , and created by <a href="https://github.com/katychuang">Katy Chuang.</a> 
+     </p>
+    </div>
+
+
+    
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="http://127.0.0.1:8000/static/js/jquery.min.js"></script>
+<script src="http://127.0.0.1:8000/static/js/spaceg.stylesheets.min.js"></script> 
+<script src="http://127.0.0.1:8000/static/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="http://127.0.0.1:8000/static/js/scripts.js"></script>
+
+
+
+    </body>
+</html>

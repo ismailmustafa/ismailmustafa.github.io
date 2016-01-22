@@ -9,7 +9,7 @@ then
   exit 1
 fi
 
-# delte old site
+# delete old site
 rm -rf *
 git add -A && git commit -m "delete old site"
 
@@ -22,6 +22,6 @@ stack exec blog rebuild
 # switch to master, extract site and push
 git checkout master
 mv _site/* .
-git add -A && git commit -m "$1"
+git add -A && git commit --amend -m "$1"
 git push origin master
 

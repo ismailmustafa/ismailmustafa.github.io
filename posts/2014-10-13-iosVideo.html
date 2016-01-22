@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <!-- 
+      loads the http over https ssl - 
+      welcome to my website! 
+
+	this theme is based off the Ice & Fire theme created by Lucas Gatsas
+      https://www.twitter.com/LucasGatsas
+      www.lucasgatsas.ch - switzerland. 
+                                                    --> 
+
+<!--
+<script type="text/javascript">
+var host = "https://katychuang.me/";
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+</script>
+-->
+<!-- Microsoft Internet Explorer documentMode compatMode setting IE Modus --> 
+<script type="text/javascript">
+var IE = null;
+if (window.navigator.appName == "Microsoft Internet Explorer") {
+  if (document.documentMode) {
+  
+    IE = document.documentMode; 
+    } else {
+   
+        IE = 5; 
+          if (document.compatMode) {
+      if (document.compatMode == "CSS1Compat")
+      IE = 11; 
+      }
+    }
+  }
+</script>
+
+    <meta charset="utf-8">
+    <!-- X-UA --> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <link rel="author" title="Katy Chuang" href="https://plus.google.com/u/0/111391719267336703432/posts" />
+
+
+    <meta name="google" content="notranslate" />
+    <!-- Viewport --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- index ROBOTS follow --> 
+    <meta name="robots" content="index, follow" />
+    <!-- Site Desciption --> 
+    <meta name="description" content="Mustafa's Musings">
+        <!-- Site Desciption --> 
+    <meta name="keywords" content="Ismail Mustafa, ijmustafa, ismailmustafa, Software Engineer, iOS Developer, iOS Engineer, iOS">
+    <!-- Favicon --> 
+    <link rel="shortcut icon" href="http://127.0.0.1:8000/static/img/ico.png" type="image/x-icon" />
+    <!-- Blog Title -->
+    <title>Mustafa's Musings</title>
+
+    <!--     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+--> 
+    <!-- Property Metas --> 
+    <meta property="og:image" content="http://127.0.0.1:8000/static/img/ix.png" />
+    <meta property="og:title" content="Mustafa's Musings" />
+    <meta property="og:site_name" content="Mustafa's Musings" />
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="http://127.0.0.1:8000/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/static/css/spaceg.stylesheets.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+	#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:url("/static/img/preloader.gif"); /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */}
+	ul, ol {margin-top: 0;margin-bottom: 10px;}
+	.navbar-inverse {background-color: #FFF;border-color: #FFFFFF;}
+</style> 
+<!--link rel="stylesheet" href="http://127.0.0.1:8000/static/css/prettify.css"-->
+<style>
+	header.intro-header {background: #6f5499;background: no-repeat center center;background-attachment: scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}
+	/* Preloader */#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:; /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */} 
+	li {list-style: none;}
+            body.modal-open 
+            {overflow: hidden;padding-right: 0px;
+        }
+	article li {list-style: inherit;}
+	article .figure {text-align: center}
+    </style>
+    <!-- end Loading front stylesheet here --> 
+    </head>
+
+    <body>
+	<div id="preloader">
+	    <div id="status">
+
+	    </div>
+
+	</div>  
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://127.0.0.1:8000" id="blog-title-left-top">IM</a>
+        </div>   
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#portfolioModal2" data-toggle="modal"><i class="fa fa-random" id="icon-top"></i></a>
+                <ul class="dropdown-menu"></ul>
+                </li>
+                
+                <li><a href="http://127.0.0.1:8000/about.html" target="_self">About</a></li>
+                <li><a href="http://127.0.0.1:8000/contact.html" target="_self">Contact</a></li>
+                <li><a href="http://127.0.0.1:8000/projects.html" target="_self">Projects</a></li>
+                <li><a href="http://127.0.0.1:8000/archive.html" target="_self">Archive</a></li>
+                <li><a href="https://www.github.com/ismailmustafa" id="roundbutton" target="_blank"><i class="fa fa-github"></i>ismailmustafa</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<!-- Portfolio Modals -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true" style="padding-right:0px; overflow: hidden;">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h1 class="font-style-inline-small-h1">Ismail Mustafa</h1>
+                            <hr class="star-primary">
+                            <img src="http://127.0.0.1:8000/static/img/face.jpg" class="img-responsive img-centered" alt title>
+                            <p class="font-style-inline-small">
+                                Hello, my name is Ismail Mustafa, I'm a Master's Student in Computer Science <br>
+                                at NYU. Thanks for taking the time to visit my blog. I hope you like it! <br>
+                                <a href="https://www.twitter.com/ijmustafa" target="_blank">follow me</a>. <br> 
+                                <a href="https://www.github.com/ismailmustafa" target="_blank">    <i class="fa fa-github" id="spaceg-social-modal"></i> </a> 
+                                <a href="https://www.twitter.com/ijmustafa" target="_blank"><i class="fa fa-twitter" id="spaceg-social-modal"></i> </a>    
+                                <a href="https://linkedin.com/in/ijmustafa" target="_blank"> <i class="fa fa-linkedin" id="spaceg-social-modal"></i></a> 
+                            </p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Menu Modals Add New Sa.21.Feb.2015 03:22:25 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true" style="padding-right:0px; overflow: hidden;">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h1 class="font-style-inline-small-h1">i.m</h1>
+                            <hr class="star-primary">
+                            <p class="font-style-inline-small">
+                        <a href="https://www.twitter.com/ijmustafa" target="_blank">follow</a>. <br> 
+                        <a href="https://www.github.com/ismailmustafa" target="_blank">    <i class="fa fa-github" id="spaceg-social-modal"></i> </a> 
+                        <a href="https://www.twitter.com/ijmustafa" target="_blank"><i class="fa fa-twitter" id="spaceg-social-modal"></i> </a>    
+                        <a href="https://linkedin.com/in/ijmustafa" target="_blank"> <i class="fa fa-linkedin" id="spaceg-social-modal"></i></a>  <br>
+                    <li><a href="http://127.0.0.1:8000/" target="_self">Home</a></li>
+                    <li><a href="http://127.0.0.1:8000/about.html" target="_self">About Me</a></li>
+                    <li><a href="http://127.0.0.1:8000/projects.html" target="_self">Projects</a></li>
+                    <li><a href="http://127.0.0.1:8000/archive.html" target="_self">Archive</a></li>
+                            </p>
+                      
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+        <div id="content">
+            <!-- Post Header -->
+
+<header class="intro-header" style="background-image: url('http://127.0.0.1:8000/static/img/2014-10-13-iosVideo.png')" alt title>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Adding a Video to Your iOS App</h1>
+                    
+                    <span class="meta">
+		    
+			October 13, 2014
+		    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+			<h2 id="sample-videos">Sample Videos</h2>
+<p>If you’re just learning and want a sample video to mess around with, I got mine from <a href="http://techslides.com/sample-webm-ogg-and-mp4-video-files-for-html5/">here</a>. ##Basic Setup Adding and making a video play in your iOS app is very easy to do. First, let’s make a simple application in order for us to actually play a video. Open up a new x-code single view application and go to the storyboard. Once there, drag a button anywhere on the screen. Let’s change the text of the button to be “Play video” since its purpose is to play the video.</p>
+<div class="figure">
+<img src="../static/img/image1-iosVideo.png" alt="Play Video Button Example" />
+<p class="caption">Play Video Button Example</p>
+</div>
+<p>Then <strong>“ctrl-drag”</strong> that button and create an <strong>action</strong> in ViewController.h.</p>
+<div class="sourceCode"><pre class="sourceCode objectivec"><code class="sourceCode objectivec">- (IBAction)playButtonTapped:(id)sender;</code></pre></div>
+<h2 id="the-actual-video-handling-part">The Actual Video Handling Part</h2>
+<p>Next import the mediaplayer framework in <strong>ViewController.m</strong>:</p>
+<div class="sourceCode"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="ot">#import &lt;MediaPlayer/MediaPlayer.h&gt;</span></code></pre></div>
+<p>Now create an <strong>MPMoviePlayerViewController</strong> property that will handle playing the movie for us.</p>
+<div class="sourceCode"><pre class="sourceCode objectivec"><code class="sourceCode objectivec">@property (strong, nonatomic) MPMoviePlayerViewController *moviePlayerViewController;</code></pre></div>
+<p>Next, below the <strong>didReceiveMemoryWarning</strong> method, add the following method:</p>
+<div class="sourceCode"><pre class="sourceCode objectivec"><code class="sourceCode objectivec">- (<span class="dt">void</span>)playMovieWithFilename:(NSString *)filename andType:(NSString *)type
+{
+    NSString *filepath = [[NSBundle mainBundle] pathForResource:filename ofType:type];
+    <span class="kw">self</span>.moviePlayerViewController = [[MPMoviePlayerViewController alloc] 
+                                     initWithContentURL:[NSURL fileURLWithPath:filepath]];
+    [<span class="kw">self</span> presentMoviePlayerViewControllerAnimated:<span class="kw">self</span>.moviePlayerViewController];
+}</code></pre></div>
+<p>We can now call this method from inside of our <strong>playButtonTapped</strong> method like so:</p>
+<div class="sourceCode"><pre class="sourceCode objectivec"><code class="sourceCode objectivec">- (IBAction)playButtonTapped:(id)sender {
+    [<span class="kw">self</span> playMovieWithFilename:<span class="st">@&quot;sampleVideo&quot;</span> andType:<span class="st">@&quot;mp4&quot;</span>];
+}</code></pre></div>
+<h2 id="make-sure-you-drag-your-video-into-the-project">Make Sure You Drag Your Video into the Project</h2>
+<p>Before going any further, make sure you actually drag your video file into your bundle so that your app can locate it. Now when you run your app, you should be able to just hit <strong>“Play Video”</strong> and watch the video play. If not, then chances are, your video isn’t in the copy bundle resources. Go to <strong>Targets</strong> -&gt; <strong>(name of your project)</strong> -&gt; <strong>Build Phases</strong> -&gt; <strong>Copy Bundle Resources</strong> and make sure that your video is in there. If not, just click the <strong>+</strong> button, locate your video file, and add it.</p>
+<h2 id="and-now-play-it">And Now Play It</h2>
+<p>When you press the play button, a new view controller will pop up that should look familiar. Your entire video will play and the view controller will automatically dismiss itself once it’s done. You can also pause the video, fast forward, reverse, and adjust the volume. In just a few lines of code, you were able present an entire video playing interface.</p>
+<div class="figure">
+<img src="../static/img/image2-iosVideo.png" alt="Final Video Player Example" />
+<p class="caption">Final Video Player Example</p>
+</div>	
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    
+                </ul>
+
+            </div>
+        </div>
+
+
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+
+var getSegment = function (url, index) {
+   return url.replace(/^https?:\/\//, '').split('/')[index];
+}
+
+
+var disqus_config = function () {
+// Set url of page
+this.page.url = document.URL; // Replace PAGE_URL with your page's canonical URL variable
+
+// Determine ident of page
+var lastPartOfLink = getSegment(document.URL,2);
+var res = lastPartOfLink.split(".");
+var ident = res[0];
+this.page.identifier = ident; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//ismailmustafa-blog.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+    </div>
+
+
+
+
+
+</article>
+<hr>
+
+
+
+        </div>
+        <div id="footer">
+        </div>
+      <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        
+                    
+                    <li>
+                        <a href="https://twitter.com/ijmustafa" data-datatype="json" data-type="GET" data-target="#frame" class="reload" id="clickme" target="_blank">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                     
+                     
+                    <li>
+                        <a href="https://github.com/ismailmustafa" target="_blank">
+                            <span class="fa-stack fa-lg">
+
+                                <i class="fa fa-arrow-circle-o-down"></i>
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                     
+                    <li>
+                        <a href="https://linkedin.com/in/ijmustafa" target="_blank">
+                            <span class="fa-stack fa-lg">
+
+                                <i class="fa fa-arrow-circle-o-down"></i>
+                                <i class="fa fa-circle fa-stack-1x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+		    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; ismailmustafa 2016. <br><br> 
+                </p>
+<div class="col-md-12">
+     <p class="copyright text-muted">
+            Site generated by
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>. Modified theme inspired by
+      <!-- ICE AND FIRE THEME https://github.com/SpaceG/iceandfire -->
+      <a href="https://github.com/SpaceG/CleanMagicMedium-Jekyll">CleanMagic</a>
+        , and created by <a href="https://github.com/katychuang">Katy Chuang.</a> 
+     </p>
+    </div>
+
+
+    
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="http://127.0.0.1:8000/static/js/jquery.min.js"></script>
+<script src="http://127.0.0.1:8000/static/js/spaceg.stylesheets.min.js"></script> 
+<script src="http://127.0.0.1:8000/static/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="http://127.0.0.1:8000/static/js/scripts.js"></script>
+
+
+
+    </body>
+</html>
