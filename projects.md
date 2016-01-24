@@ -4,7 +4,7 @@ headerImg: projects.jpg
 ---
 
 ## NJDOT Fuel Up API
-I created the <a href="https://github.com/ismailmustafa/NJDOT-FuelUp-API">NJDOT Fuel UP API for</a>
+I created the <a href="https://github.com/ismailmustafa/NJDOT-FuelUp-API">NJDOT Fuel UP API</a>
 for <a href="https://github.com/jayrav13">Jay Ravaliya's</a> Fuel Up iOS app.
 His app was built to help NJDOT employees find important locations in New Jersey. Technologies
 used include [Servant](https://haskell-servant.github.io), sqlite3, and Amazon EC2 for hosting.
@@ -29,7 +29,7 @@ anyone around the world at the same time. Technologies used include Rails, webso
 iOS, a MyoBand, and iOS's coremotion API. You can watch highlights from the event below:
 
 <center>
-<iframe src="https://player.vimeo.com/video/133303173" width="450" height="252" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <iframe src="https://player.vimeo.com/video/133302938" width="450" height="252" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/133303173" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <iframe src="https://player.vimeo.com/video/133302938" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </center>
 
 ##Shelf - May 2015
