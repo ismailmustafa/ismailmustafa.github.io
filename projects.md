@@ -29,7 +29,7 @@ anyone around the world at the same time. Technologies used include Rails, webso
 iOS, a MyoBand, and iOS's coremotion API. You can watch highlights from the event below:
 
 <center>
-<iframe src="https://player.vimeo.com/video/133303173" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <iframe src="https://player.vimeo.com/video/133302938" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/133303173" width="350" height="197" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <iframe src="https://player.vimeo.com/video/133302938" width="350" height="197" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </center>
 
 ##Shelf - May 2015
