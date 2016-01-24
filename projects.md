@@ -3,6 +3,12 @@ title: Projects
 headerImg: projects.jpg
 ---
 
+## NJDOT Fuel Up API
+I created the <a href="https://github.com/ismailmustafa/NJDOT-FuelUp-API">NJDOT Fuel UP API for</a>
+for <a href="https://github.com/jayrav13">Jay Ravaliya's</a> Fuel Up iOS app.
+His app was built to help NJDOT employees find important locations in New Jersey. Technologies
+used include [Servant](https://haskell-servant.github.io), sqlite3, and Amazon EC2 for hosting.
+
 ## Rubik's Hacks - October 2015
 I built <a href="http://devpost.com/software/ru6-x-h-x">Rubik's Hacks</a> along with
 <a href="https://github.com/jayrav13">Jay Ravaliya</a>. Rubik's Hacks is an iOS app that can
@@ -13,7 +19,6 @@ information and return a solution on how to solve the cube. Technologies used in
 Haskell web framework "Scotty", and iOS.
 
 ## MyoDrums - July 2015
-
 I built <a href="http://www.hackathon.io/myodrums">MyoDrums</a> (*Winner of the Best Myoband Hack*)
 along with <a href="https://github.com/jayrav13">Jay Ravaliya</a>, and
 <a href="https://github.com/bossjones">Malcolm Jones</a>,
@@ -24,7 +29,7 @@ anyone around the world at the same time. Technologies used include Rails, webso
 iOS, a MyoBand, and iOS's coremotion API. You can watch highlights from the event below:
 
 <center>
-<iframe src="https://player.vimeo.com/video/133303173" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <iframe src="https://player.vimeo.com/video/133302938" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/133303173" width="450" height="252" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <iframe src="https://player.vimeo.com/video/133302938" width="450" height="252" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </center>
 
 ##Shelf - May 2015
