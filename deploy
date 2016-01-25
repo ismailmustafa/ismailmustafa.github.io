@@ -38,3 +38,6 @@ git checkout master
 mv _site/* .
 git add -A && git commit --amend -m "$1"
 git push origin master
+
+# return to original branch
+git checkout hakyll
