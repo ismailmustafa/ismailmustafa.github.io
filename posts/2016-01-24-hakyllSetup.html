@@ -210,15 +210,21 @@ if (window.navigator.appName == "Microsoft Internet Explorer") {
 
 
         <div id="content">
-            
-<!-- Post Header -->
-<header class="intro-header" style="background-image: url('/static/img/archive.jpg')" alt title>
+            <!-- Post Header -->
+
+<header class="intro-header" style="background-image: url('http://ismailmustafa.com/static/img/2016-01-24-hakyllSetup.png')" alt title>
+
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-		<div class="post-heading">
-                    <h1 style="color:white;">Archive</h1>
-		</div>
+                <div class="post-heading">
+                    <h1>Hakyll on Github Pages using Stack</h1>
+                    
+                    <span class="meta">
+		    
+			January 24, 2016
+		    </span>
+                </div>
             </div>
         </div>
     </div>
@@ -230,46 +236,144 @@ if (window.navigator.appName == "Microsoft Internet Explorer") {
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-Previous posts:
-<ul>
-    
-        <li>
-            <a href="./posts/2016-01-24-hakyllSetup.html">Hakyll on Github Pages using Stack</a> - January 24, 2016
-        </li>
-    
-        <li>
-            <a href="./posts/2014-11-17-coremotion.html">Introduction to Core Motion</a> - November 17, 2014
-        </li>
-    
-        <li>
-            <a href="./posts/2014-11-06-hamburgerMenu.html">Creating a Hamburger Menu With the "Just in Mind" Wireframing Tool</a> - November  6, 2014
-        </li>
-    
-        <li>
-            <a href="./posts/2014-10-27-cocoapods.html">How to Create Your Own CocoaPod</a> - October 27, 2014
-        </li>
-    
-        <li>
-            <a href="./posts/2014-10-20-delegates.html">Sending Data Back to a Previous View Controller</a> - October 20, 2014
-        </li>
-    
-        <li>
-            <a href="./posts/2014-10-13-iosVideo.html">Adding a Video to Your iOS App</a> - October 13, 2014
-        </li>
-    
-        <li>
-            <a href="./posts/2014-10-06-python.html">Arbitrarily Large Numbers in Python</a> - October  6, 2014
-        </li>
-    
-</ul>
-
+			<p>If you’ve seen the dates on my previous posts, you’ll know that I’ve been delaying writing a post for quite a while. So, I decided to start the new year with a blog refresh using Hakyll. I’ve also made it my new years resolution to start writing more blog posts about the work I’ve been doing.</p>
+<p>In this post, I’m going to talk about how I set up Hakyll on Github Pages using Stack. For this tutorial, I’m assuming you already have Stack setup. If not, then get it <a href="http://www.haskellstack.org" target="_blank">here</a>. While you don’t actually need Stack to setup Hakyll, you’ll need it for this tutorial since the commands I’ll be showing use Stack.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>First, create a repository on Github for your Github Pages site with the following name:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">&lt;your-name&gt;</span>.github.io</code></pre></div>
+<p>Be sure to create it without a README, and don’t clone it yet as we’ll push our hakyll repo up to it later.</p>
+<p>Before I move on, I’ll explain exactly what we’ll be doing. First we’ll create a Hakyll project using the Stack Hakyll template. Then we’ll git init our directory and set it up so that we have two branches, a master branch and a hakyll branch where all our work will be done. The way github pages works is that it expects the index.html file to be in the top directory however when we build the site using hakyll, it generate the entire site in the _site/ subdirectory. Github pages won’t pick this up. So in this setup, the master branch will contain the generated website, and the Hakyll branch will contain all the code required to build it. Then we’ll create a script that will deploy the website for us without us having to switch back and forth between branches manually.</p>
+<p>Back to the steps. We want to setup Hakyll using the Stack template for Hakyll:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">stack</span> new <span class="kw">&lt;</span>your-blog-name<span class="kw">&gt;</span> hakyll-template</code></pre></div>
+<p>This will create a folder with the name <your-blog-name>. cd into this folder. You’ll notice that this template automatically generates a .gitignore file for you. If you’re on a mac, you’ll want to remember to add .DS_Store to your .gitignore (this should ideally be in your global gitignore).</p>
+<h2 id="setting-your-blog-up-with-git">Setting your blog up with Git</h2>
+<p>The next few commands will set up your Git repo so that there is a clear separation between your website on master, and the tools to generate your website on the hakyll branch. Git init the repo, and add your remote to your github pages repo:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> init
+<span class="kw">git</span> add -A
+<span class="kw">git</span> commit -m <span class="st">&quot;Initial commit&quot;</span>
+<span class="kw">git</span> remote add origin git@github.com:<span class="kw">&lt;</span>github-name<span class="kw">&gt;</span>/<span class="kw">&lt;</span>github-name<span class="kw">&gt;</span>.github.io.git</code></pre></div>
+<p>Then create a hakyll branch, and push it up to your blog:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> checkout -b hakyll
+<span class="kw">git</span> push -u origin hakyll</code></pre></div>
+<p>Now go back to your master branch, delete everything except for .git/ and .gitignore, and push that branch up as well.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> checkout master
+<span class="kw">rm</span> -rf *
+<span class="kw">rm</span> .ghci
+<span class="kw">git</span> add -A
+<span class="kw">git</span> commit -m <span class="st">&quot;Delete all files&quot;</span>
+<span class="kw">git</span> push -u origin master</code></pre></div>
+<p>We’ve now setup our repo correctly and all we have to do is go back to the hakyll (git checkout hakyll) branch and create our deploy script:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">touch</span> deploy
+<span class="kw">chmod</span> 700 deploy</code></pre></div>
+<p>And now open that file and copy the following into it:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">1</span>  <span class="co">#!/bin/bash</span>
+<span class="kw">2</span>  shopt -s extglob
+<span class="kw">3</span>
+<span class="kw">4</span>  function error_exit
+<span class="kw">5</span>  {
+<span class="kw">6</span>      echo <span class="st">&quot;</span><span class="ot">$1</span><span class="st">&quot;</span> <span class="kw">1&gt;&amp;2</span>
+<span class="kw">7</span>      exit 1
+<span class="kw">8</span>  }
+<span class="kw">9</span>
+<span class="kw">10</span>  <span class="co"># Check if commit message argument</span>
+<span class="kw">11</span>  if [ -z <span class="st">&quot;</span><span class="ot">$1</span><span class="st">&quot;</span> ]
+<span class="kw">12</span>  then
+<span class="kw">13</span>    echo <span class="st">&quot;deploy script error: What changes did you make? Type a commit message.&quot;</span>
+<span class="kw">14</span>    exit 1
+<span class="kw">15</span>  fi
+<span class="kw">16</span>  
+<span class="kw">17</span>  <span class="co"># Build successfuly or exit</span>
+<span class="kw">18</span>  stack clean
+<span class="kw">19</span>  stack build <span class="kw">||</span> <span class="kw">error</span>\_exit <span class="st">&quot;deploy script error: Build failed&quot;</span>
+<span class="kw">20</span>  
+<span class="kw">21</span>  <span class="co"># Push changes on hakyll branch to github</span>
+<span class="kw">22</span>  git add -A
+<span class="kw">23</span>  git commit -m <span class="st">&quot;</span><span class="ot">$1</span><span class="st">&quot;</span> <span class="kw">||</span> <span class="kw">error</span>\_exit <span class="st">&quot;deploy script error: no changes to commit&quot;</span>
+<span class="kw">24</span>  git push origin hakyll
+<span class="kw">25</span>  
+<span class="kw">26</span>  <span class="co"># Switch to master branch</span>
+<span class="kw">27</span>  git checkout master
+<span class="kw">28</span>  
+<span class="kw">29</span>  <span class="co"># delete old site</span>
+<span class="kw">30</span>  rm -rf !(CNAME) <span class="co"># dont delete CNAME</span>
+<span class="kw">31</span>  git add -A <span class="kw">&amp;&amp;</span> <span class="kw">git</span> commit -m <span class="st">&quot;delete old site&quot;</span>
+<span class="kw">32</span>  
+<span class="kw">33</span>  <span class="co"># switch to hakyll branch and rebuild website</span>
+<span class="kw">34</span>  git checkout hakyll
+<span class="kw">35</span>  stack exec blog rebuild
+<span class="kw">36</span>  
+<span class="kw">37</span>  <span class="co"># switch to master, extract site and push</span>
+<span class="kw">38</span>  git checkout master
+<span class="kw">39</span>  mv \_site/<span class="dt">\*</span> .
+<span class="kw">40</span>  git add -A <span class="kw">&amp;&amp;</span> <span class="kw">git</span> commit --amend -m <span class="st">&quot;</span><span class="ot">$1</span><span class="st">&quot;</span>
+<span class="kw">41</span>  git push origin master
+<span class="kw">42</span>  
+<span class="kw">43</span>  <span class="co"># return to original branch</span>
+<span class="kw">44</span>  git checkout hakyll</code></pre></div>
+<p>I won’t go into too much detail because I feel as though I’ve commented it fairly well but I’ll give a quick summary. Lines 10 - 15 check if you’ve included a commit message as an argument to the script. It then checks if your project builds, in lines 17 - 19. Those changes are then commited and pushed to your hakyll branch. After switching back to the master branch, we delete the old website but ensure that the CNAME file isn’t deleted as we need that for custom domains. We then commit this with a generic message and switch back to the hakyll branch. We then invoke the hakyll rebuild command to build your website which creates the _site folder. Switching back to master brings this folder along. We then extract the contents of this folder, commit the changes, and push the new site up to origin.</p>
+<h2 id="workflow">Workflow</h2>
+<p>So now that we have our git repo set up with the proper branches, and a convenient deploy script that does all the work for us, what does this mean for our workflow? Well I now never have to leave the hakyll branch, and whenever I make any changes like writing a new blog post, all I have to do is type the following command:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">./deploy</span> <span class="st">&quot;Wrote new blog post&quot;</span></code></pre></div>	
 
                 <hr>
 
+                <ul class="pager">
+                    
+                    
+                </ul>
+
             </div>
         </div>
+
+
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+
+var getSegment = function (url, index) {
+   return url.replace(/^https?:\/\//, '').split('/')[index];
+}
+
+
+var disqus_config = function () {
+// Set url of page
+this.page.url = document.URL; // Replace PAGE_URL with your page's canonical URL variable
+
+// Determine ident of page
+var lastPartOfLink = getSegment(document.URL,2);
+var res = lastPartOfLink.split(".");
+var ident = res[0];
+this.page.identifier = ident; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//ismailmustafa-blog.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+
     </div>
+
+
+
+
+
 </article>
+<hr>
+
+
 
         </div>
         <div id="footer">
