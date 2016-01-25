@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <!-- 
+      loads the http over https ssl - 
+      welcome to my website! 
+
+	this theme is based off the Ice & Fire theme created by Lucas Gatsas
+      https://www.twitter.com/LucasGatsas
+      www.lucasgatsas.ch - switzerland. 
+                                                    --> 
+
+<!--
+<script type="text/javascript">
+var host = "https://katychuang.me/";
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+</script>
+-->
+<!-- Microsoft Internet Explorer documentMode compatMode setting IE Modus --> 
+<script type="text/javascript">
+var IE = null;
+if (window.navigator.appName == "Microsoft Internet Explorer") {
+  if (document.documentMode) {
+  
+    IE = document.documentMode; 
+    } else {
+   
+        IE = 5; 
+          if (document.compatMode) {
+      if (document.compatMode == "CSS1Compat")
+      IE = 11; 
+      }
+    }
+  }
+</script>
+
+    <meta charset="utf-8">
+    <!-- X-UA --> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <link rel="author" title="Katy Chuang" href="https://plus.google.com/u/0/111391719267336703432/posts" />
+
+
+    <meta name="google" content="notranslate" />
+    <!-- Viewport --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- index ROBOTS follow --> 
+    <meta name="robots" content="index, follow" />
+    <!-- Site Desciption --> 
+    <meta name="description" content="Mustafa's Musings">
+        <!-- Site Desciption --> 
+    <meta name="keywords" content="Ismail Mustafa, ijmustafa, ismailmustafa, Software Engineer, iOS Developer, iOS Engineer, iOS">
+    <!-- Favicon --> 
+    <link rel="shortcut icon" href="http://ismailmustafa.com/static/img/ico.png" type="image/x-icon" />
+    <!-- Blog Title -->
+    <title>Mustafa's Musings</title>
+
+    <!--     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+--> 
+    <!-- Property Metas --> 
+    <meta property="og:image" content="http://ismailmustafa.com/static/img/ix.png" />
+    <meta property="og:title" content="Mustafa's Musings" />
+    <meta property="og:site_name" content="Mustafa's Musings" />
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="http://ismailmustafa.com/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://ismailmustafa.com/static/css/spaceg.stylesheets.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+	#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:url("/static/img/preloader.gif"); /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */}
+	ul, ol {margin-top: 0;margin-bottom: 10px;}
+	.navbar-inverse {background-color: #FFF;border-color: #FFFFFF;}
+</style> 
+<!--link rel="stylesheet" href="http://ismailmustafa.com/static/css/prettify.css"-->
+<style>
+	header.intro-header {background: #6f5499;background: no-repeat center center;background-attachment: scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}
+	/* Preloader */#preloader {position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff; /* change if the mask should have another color then white */z-index:99; /* makes sure it stays on top */}
+	#status {width:200px;height:200px;position:absolute;left:50%; /* centers the loading animation horizontally one the screen */top:50%; /* centers the loading animation vertically one the screen */background-image:; /* path to your loading animation */background-repeat:no-repeat;background-position:center;margin:-100px 0 0 -100px; /* is width and height divided by two */} 
+	li {list-style: none;}
+            body.modal-open 
+            {overflow: hidden;padding-right: 0px;
+        }
+	article li {list-style: inherit;}
+	article .figure {text-align: center}
+    </style>
+    <!-- end Loading front stylesheet here --> 
+    </head>
+
+    <body>
+	<div id="preloader">
+	    <div id="status">
+
+	    </div>
+
+	</div>  
+	<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://ismailmustafa.com" id="blog-title-left-top">IM</a>
+        </div>   
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#portfolioModal2" data-toggle="modal"><i class="fa fa-random" id="icon-top"></i></a>
+                <ul class="dropdown-menu"></ul>
+                </li>
+                
+                <li><a href="http://ismailmustafa.com/about.html" target="_self">About</a></li>
+                <li><a href="http://ismailmustafa.com/contact.html" target="_self">Contact</a></li>
+                <li><a href="http://ismailmustafa.com/projects.html" target="_self">Projects</a></li>
+                <li><a href="http://ismailmustafa.com/archive.html" target="_self">Archive</a></li>
+                <li><a href="https://www.github.com/ismailmustafa" id="roundbutton" target="_blank"><i class="fa fa-github"></i>ismailmustafa</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<!-- Portfolio Modals -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true" style="padding-right:0px; overflow: hidden;">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h1 class="font-style-inline-small-h1">Ismail Mustafa</h1>
+                            <hr class="star-primary">
+                            <img src="http://ismailmustafa.com/static/img/face.jpg" class="img-responsive img-centered" alt title>
+                            <p class="font-style-inline-small">
+                                Hello, my name is Ismail Mustafa, I'm a Master's Student in Computer Science <br>
+                                at NYU. Thanks for taking the time to visit my blog. I hope you like it! <br>
+                                <a href="https://www.twitter.com/ijmustafa" target="_blank">follow me</a>. <br> 
+                                <a href="https://www.github.com/ismailmustafa" target="_blank">    <i class="fa fa-github" id="spaceg-social-modal"></i> </a> 
+                                <a href="https://www.twitter.com/ijmustafa" target="_blank"><i class="fa fa-twitter" id="spaceg-social-modal"></i> </a>    
+                                <a href="https://linkedin.com/in/ijmustafa" target="_blank"> <i class="fa fa-linkedin" id="spaceg-social-modal"></i></a> 
+                            </p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Menu Modals Add New Sa.21.Feb.2015 03:22:25 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true" style="padding-right:0px; overflow: hidden;">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h1 class="font-style-inline-small-h1">i.m</h1>
+                            <hr class="star-primary">
+                            <p class="font-style-inline-small">
+                        <a href="https://www.twitter.com/ijmustafa" target="_blank">follow</a>. <br> 
+                        <a href="https://www.github.com/ismailmustafa" target="_blank">    <i class="fa fa-github" id="spaceg-social-modal"></i> </a> 
+                        <a href="https://www.twitter.com/ijmustafa" target="_blank"><i class="fa fa-twitter" id="spaceg-social-modal"></i> </a>    
+                        <a href="https://linkedin.com/in/ijmustafa" target="_blank"> <i class="fa fa-linkedin" id="spaceg-social-modal"></i></a>  <br>
+                    <li><a href="http://ismailmustafa.com/" target="_self">Home</a></li>
+                    <li><a href="http://ismailmustafa.com/about.html" target="_self">About Me</a></li>
+                    <li><a href="http://ismailmustafa.com/projects.html" target="_self">Projects</a></li>
+                    <li><a href="http://ismailmustafa.com/archive.html" target="_self">Archive</a></li>
+                            </p>
+                      
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+        <div id="content">
+            <!-- Post Header -->
+
+<header class="intro-header" style="background-image: url('http://ismailmustafa.com/static/img/2014-10-20-delegates.png')" alt title>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Sending Data Back to a Previous View Controller</h1>
+                    
+                    <span class="meta">
+		    
+			October 20, 2014
+		    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+			<h2 id="tldr">tl;dr</h2>
+<p>Sending data to a previous view controller sucks. Follow this recipe.</p>
+<h2 id="sending-data-forward-prepareforsegue">Sending Data Forward (PrepareForSegue:)</h2>
+<p>Sending data to a new view controller is easy and can be done in as little as two lines using the prepare for segue method as shown below:</p>
+<div class="sourceCode"><pre class="sourceCode objectivec"><code class="sourceCode objectivec">- (<span class="dt">void</span>)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    SecondViewController *secondVC = segue.destinationViewController;
+    secondVC.&lt;propertyToSet&gt; = &lt;dataToBePassedForward&gt;;
+}</code></pre></div>
+<p>Passing data isn’t just a one way street though. More often than not, we’re going to want to return something in order to display it on the view controller we just returned to. For example, let’s say we have a tableview populated with names. We want to be able to present a new view controller modally in order to type in a new name and add it to the list. In order to this this, we are going to need a way to pass that name from the modally presented view controller back to the presenting view controller. The best way to do this is by using a delegate. This tutorial will walk you through how to do that.</p>
+<h2 id="initial-setup">Initial Setup</h2>
+<p>In order to follow along, I recommend you download the starter project I made from <a href="https://github.com/ismailmustafa/PassingDataBack">here</a>. Once you open this project, open up storyboard and you’ll see two view controllers, one of which is embedded in a navigation controller. The root view controller is a table containing individual names and the second view controller is accessed via the <strong>add</strong> button on the top right of the <strong>NamesTableViewController</strong>. If you go ahead and run the app, you’ll notice you can type a name into the text field but nothing happens when you click submit. We’re going to set that up right now.</p>
+<div class="figure">
+<img src="../static/img/image1-delegates.gif" alt="Non-working Example" />
+<p class="caption">Non-working Example</p>
+</div>
+<h2 id="how-it-works">How it Works</h2>
+<p>The whole point of this is to make the <strong>NamesTableViewController</strong> a delegate of <strong>AddNameViewController</strong>. We will then implement the delegate methods in <strong>AddNameViewController</strong>, and when the delegate method is used, <strong>NamesTableViewController</strong> will be notified through that particular delegate method. Re-written in a much more user friendly way where <strong>Second View Controller</strong> refers to the view controller we are going to:</p>
+<ol style="list-style-type: decimal">
+<li>Implement a delegate method in the <strong>Second View Controller</strong> using a protocol.</li>
+<li>Create a delegate property that any other view controller can use to become a delegate of this <strong>Second View Controller</strong>.</li>
+<li>Implement the delegate method in the <strong>Second View Controller</strong></li>
+<li>Have the <strong>First View Controller</strong> adopt the newly created protocol in its header file.</li>
+<li>Implement the newly defined delegate method in the <strong>First View Controller</strong>.</li>
+<li>Finally, set the <strong>First View Controller</strong> to be a delegate of the <strong>Second View Controller</strong></li>
+</ol>
+<h2 id="create-a-protocol">1. Create a Protocol</h2>
+<p>First we need to create a protocol in <strong>AddNameViewController</strong>. Add the following code right above <strong><span class="citation">@interface</span></strong> in the header file.</p>
+<div class="sourceCode"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="kw">@protocol</span> AddNameViewControllerDelegate &lt;NSObject&gt;
+
+- (<span class="dt">void</span>)addedNewName:(NSString *)name;
+
+<span class="kw">@end</span></code></pre></div>
+<h2 id="create-a-delegate-property">2. Create a Delegate Property</h2>
+<p>Create a delegate property so that we can use it to set the <strong>NamesTableViewController</strong> as the delegate.</p>
+<div class="sourceCode"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="kw">@interface</span> AddNameViewController : UIViewController
+
+@property (strong, nonatomic) id &lt;AddNameViewControllerDelegate&gt; delegate;
+
+<span class="kw">@end</span></code></pre></div>
+<h2 id="implement-delegate-method-in-addnamesviewcontroller">3. Implement Delegate Method in AddNamesViewController</h2>
+<p>Modify the submitButtonTapped: method in <strong>AddNamesViewController.m</strong> to look like this:</p>
+<div class="sourceCode"><pre class="sourceCode objectivec"><code class="sourceCode objectivec">- (IBAction)submitButtonTapped:(id)sender {
+    [<span class="kw">self</span>.delegate addedNewName:<span class="kw">self</span>.nameTextField.text];
+    [<span class="kw">self</span> dismissViewControllerAnimated:YES completion:nil];
+}</code></pre></div>
+<p>The first method is called on self.delegate which means that if another view controller has implemented this method and is a delegate of this view controller, that method will “fire off”. The second method simply dismisses the view controller so we can go back to the table view.</p>
+<h2 id="adopt-addnameviewcontrollerdelegate-in-namestableviewcontroller">4. Adopt AddNameViewControllerDelegate in NamesTableViewController</h2>
+<p>In <strong>NamesTableViewController.h</strong>, adopt the newly created protocol like so:</p>
+<div class="sourceCode"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="ot">#import &quot;AddNameViewController.h&quot;</span>
+
+<span class="kw">@interface</span> NamesTableViewController : UITableViewController &lt;AddNameViewControllerDelegate&gt;
+
+<span class="kw">@end</span></code></pre></div>
+<h2 id="implement-the-delegate-method-in-namestableviewcontroller">5. Implement the Delegate Method in NamesTableViewController</h2>
+<p>If you go to <strong>NamesTableViewController.m</strong>, you’ll notice a warning triangle at the top. This is because you have yet to implement the delegate method from the protocol you just adopted. So let’s go ahead and do that just below <strong>viewDidLoad</strong>:</p>
+<div class="sourceCode"><pre class="sourceCode objectivec"><code class="sourceCode objectivec">- (<span class="dt">void</span>)addedNewName:(NSString *)name
+{
+    [<span class="kw">self</span>.names addObject:name];
+    [<span class="kw">self</span>.tableView reloadData];
+}</code></pre></div>
+<p>This method simply takes the <strong>name</strong> that was passed to it from <strong>AddNameViewController</strong> and adds it to the <strong>self.names</strong> NSMutableArray. We then reload the table view so that it updates whenever we add a name.</p>
+<h2 id="set-the-delegate">6. Set the Delegate!!!</h2>
+<p>This is the most important step and can be easily overlooked. In the prepareForSegue: method found in NamesTableViewController.m, add the following:</p>
+<div class="sourceCode"><pre class="sourceCode objectivec"><code class="sourceCode objectivec">- (<span class="dt">void</span>)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    AddNameViewController *addNameVC = segue.destinationViewController;
+    addNameVC.delegate = <span class="kw">self</span>;
+}</code></pre></div>
+<p>First, we get an instance of the view controller we are “going to” by using the destinationViewController property on segue. Then we simply set the delegate property of AddNameViewController to self.</p>
+<h2 id="recap">Recap</h2>
+<p>Run the app, add a name, and when you click submit, you should see the name added to the list. While it seems like a lot, the amount of code added was a total of 12 lines. To recap, all we are doing here is enabling a first view controller to be a delegate of a second view controller so that if any delegate methods are used in the second view controller, the first view controller will know about it immediatley and “receive” whatever was passed into the delegate method.</p>
+<div class="figure">
+<img src="../static/img/image2-delegates.gif" alt="Working Example" />
+<p class="caption">Working Example</p>
+</div>	
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    
+                </ul>
+
+            </div>
+        </div>
+
+
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+
+var getSegment = function (url, index) {
+   return url.replace(/^https?:\/\//, '').split('/')[index];
+}
+
+
+var disqus_config = function () {
+// Set url of page
+this.page.url = document.URL; // Replace PAGE_URL with your page's canonical URL variable
+
+// Determine ident of page
+var lastPartOfLink = getSegment(document.URL,2);
+var res = lastPartOfLink.split(".");
+var ident = res[0];
+this.page.identifier = ident; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//ismailmustafa-blog.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+    </div>
+
+
+
+
+
+</article>
+<hr>
+
+
+
+        </div>
+        <div id="footer">
+        </div>
+      <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        
+                    
+                    <li>
+                        <a href="https://twitter.com/ijmustafa" data-datatype="json" data-type="GET" data-target="#frame" class="reload" id="clickme" target="_blank">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                     
+                     
+                    <li>
+                        <a href="https://github.com/ismailmustafa" target="_blank">
+                            <span class="fa-stack fa-lg">
+
+                                <i class="fa fa-arrow-circle-o-down"></i>
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                     
+                    <li>
+                        <a href="https://linkedin.com/in/ijmustafa" target="_blank">
+                            <span class="fa-stack fa-lg">
+
+                                <i class="fa fa-arrow-circle-o-down"></i>
+                                <i class="fa fa-circle fa-stack-1x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+		    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; ismailmustafa 2016. <br><br> 
+                </p>
+<div class="col-md-12">
+     <p class="copyright text-muted">
+            Site generated by
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>. Modified theme inspired by
+      <!-- ICE AND FIRE THEME https://github.com/SpaceG/iceandfire -->
+      <a href="https://github.com/SpaceG/CleanMagicMedium-Jekyll">CleanMagic</a>
+        , and created by <a href="https://github.com/katychuang">Katy Chuang.</a> 
+     </p>
+    </div>
+
+
+    
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="http://ismailmustafa.com/static/js/jquery.min.js"></script>
+<script src="http://ismailmustafa.com/static/js/spaceg.stylesheets.min.js"></script> 
+<script src="http://ismailmustafa.com/static/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="http://ismailmustafa.com/static/js/scripts.js"></script>
+
+
+
+    </body>
+</html>
