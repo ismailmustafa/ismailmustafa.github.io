@@ -1,0 +1,40 @@
+#!/bin/bash
+shopt -s extglob
+
+function error_exit
+{
+    echo "$1" 1>&2
+    exit 1
+}
+
+# Check if commit message argument
+if [ -z "$1" ]
+then
+  echo "deploy script error: What changes did you make? Type a commit message."
+  exit 1
+fi
+
+# Build successfuly or exit
+stack build || error_exit "deploy script error: Build failed"
+
+# Push changes on hakyll branch to github
+git add -A && git commit -m "$1"
+git push origin hakyll
+
+# Switch to master branch
+git checkout master
+
+# delete old site
+rm -rf !(CNAME) # dont delete CNAME
+git add -A && git commit -m "delete old site"
+
+# switch to hakyll branch and rebuild website
+git checkout hakyll
+stack build
+stack exec blog rebuild
+
+# switch to master, extract site and push
+git checkout master
+mv _site/* .
+git add -A && git commit --amend -m "$1"
+git push origin master
