@@ -120,7 +120,7 @@ And now open that file and copy the following into it:
 27  git checkout master
 28  
 29  # delete old site
-30  rm -rf !(CNAME) # dont delete CNAME
+30  rm -rf !(CNAME|README.md) # dont delete CNAME and README.md
 31  git add -A && git commit -m "delete old site"
 32  
 33  # switch to hakyll branch and rebuild website
@@ -142,8 +142,8 @@ but I'll give a quick summary. Lines 10 - 15 check if you've included a
 commit message as an argument to the script. It then checks if your project builds, 
 in lines 17 - 19. Those changes are then commited and pushed to your hakyll branch.
 After switching back to the master branch, we delete the old website but ensure
-that the CNAME file isn't deleted as we need that for custom domains. We then commit this
-with a generic message and switch back to the hakyll branch. We then invoke the hakyll
+that the CNAME file (for a custom domain name) and README.md aren't deleted. We then commit this
+with a generic message and switch back to the hakyll branch. Then we invoke the hakyll
 rebuild command to build your website which creates the \_site folder. Switching back to
 master brings this folder along. We then extract the contents of this folder, commit the
 changes, and push the new site up to origin.

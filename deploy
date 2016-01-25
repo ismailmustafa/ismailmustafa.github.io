@@ -27,7 +27,7 @@ git push origin hakyll
 git checkout master
 
 # delete old site
-rm -rf !(CNAME) # dont delete CNAME
+rm -rf !(CNAME|README.md) # dont delete CNAME
 git add -A && git commit -m "delete old site"
 
 # switch to hakyll branch and rebuild website
