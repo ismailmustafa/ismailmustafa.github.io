@@ -295,7 +295,7 @@ if (window.navigator.appName == "Microsoft Internet Explorer") {
 <span class="kw">27</span>  git checkout master
 <span class="kw">28</span>  
 <span class="kw">29</span>  <span class="co"># delete old site</span>
-<span class="kw">30</span>  rm -rf !(CNAME) <span class="co"># dont delete CNAME</span>
+<span class="kw">30</span>  rm -rf !(CNAME<span class="kw">|README.md</span>) <span class="co"># dont delete CNAME and README.md</span>
 <span class="kw">31</span>  git add -A <span class="kw">&amp;&amp;</span> <span class="kw">git</span> commit -m <span class="st">&quot;delete old site&quot;</span>
 <span class="kw">32</span>  
 <span class="kw">33</span>  <span class="co"># switch to hakyll branch and rebuild website</span>
@@ -310,7 +310,7 @@ if (window.navigator.appName == "Microsoft Internet Explorer") {
 <span class="kw">42</span>  
 <span class="kw">43</span>  <span class="co"># return to original branch</span>
 <span class="kw">44</span>  git checkout hakyll</code></pre></div>
-<p>I won’t go into too much detail because I feel as though I’ve commented it fairly well but I’ll give a quick summary. Lines 10 - 15 check if you’ve included a commit message as an argument to the script. It then checks if your project builds, in lines 17 - 19. Those changes are then commited and pushed to your hakyll branch. After switching back to the master branch, we delete the old website but ensure that the CNAME file isn’t deleted as we need that for custom domains. We then commit this with a generic message and switch back to the hakyll branch. We then invoke the hakyll rebuild command to build your website which creates the _site folder. Switching back to master brings this folder along. We then extract the contents of this folder, commit the changes, and push the new site up to origin.</p>
+<p>I won’t go into too much detail because I feel as though I’ve commented it fairly well but I’ll give a quick summary. Lines 10 - 15 check if you’ve included a commit message as an argument to the script. It then checks if your project builds, in lines 17 - 19. Those changes are then commited and pushed to your hakyll branch. After switching back to the master branch, we delete the old website but ensure that the CNAME file (for a custom domain name) and README.md aren’t deleted. We then commit this with a generic message and switch back to the hakyll branch. Then we invoke the hakyll rebuild command to build your website which creates the _site folder. Switching back to master brings this folder along. We then extract the contents of this folder, commit the changes, and push the new site up to origin.</p>
 <h2 id="workflow">Workflow</h2>
 <p>So now that we have our git repo set up with the proper branches, and a convenient deploy script that does all the work for us, what does this mean for our workflow? Well I now never have to leave the hakyll branch, and whenever I make any changes like writing a new blog post, all I have to do is type the following command:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">./deploy</span> <span class="st">&quot;Wrote new blog post&quot;</span></code></pre></div>	
