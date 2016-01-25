@@ -15,6 +15,7 @@ then
 fi
 
 # Build successfuly or exit
+stack clean
 stack build || error_exit "deploy script error: Build failed"
 
 # Push changes on hakyll branch to github
@@ -31,7 +32,6 @@ git add -A && git commit -m "delete old site"
 
 # switch to hakyll branch and rebuild website
 git checkout hakyll
-stack build
 stack exec blog rebuild
 
 # switch to master, extract site and push
