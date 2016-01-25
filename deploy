@@ -18,7 +18,8 @@ fi
 stack build || error_exit "deploy script error: Build failed"
 
 # Push changes on hakyll branch to github
-git add -A && git commit -m "$1"
+git add -A
+git commit -m "$1" || error_exit "deploy script error: no changes to commit"
 git push origin hakyll
 
 # Switch to master branch
