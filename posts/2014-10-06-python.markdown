@@ -150,7 +150,7 @@ After looking around for a while longer, I found an even faster solution [here](
 14 print answer
 ```
 
-This is a direct translation of the Objective-c code and shell script I used except for one thing. Python can assign two variables at the same time without the need for using a temporary variable. Although this looks cool, using a temporary variable results in the same time efficiency. Running this python script to find the 10,000th fibonacci number is blazingly fast and took me only 56 ms:
+This is a direct translation of the Objective-c code and shell script used except for one thing. Python can assign two variables at the same time without the need for using a temporary variable. Although this looks cool, using a temporary variable results in the same time efficiency. Running this python script to find the 10,000th fibonacci number is blazingly fast and took me only 56 ms:
 
 ``` bash
 real	0m0.056s
