@@ -51,11 +51,7 @@ type Grid m   = MVector m (Bool, Color)
 
 generateArt :: FilePath -> IO ()
 generateArt imageFile = do
-    --home <- getHomeDirectory
     pwd <- getCurrentDirectory
-
-    --let workingDir = pwd
-    --let imageFile  = (workingDir </> "blogImage.png")
 
     let size@(width,height) = (640,360)
 

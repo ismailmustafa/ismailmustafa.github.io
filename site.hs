@@ -13,41 +13,10 @@ import           Data.Maybe (fromMaybe)
 --------------------------------------------------------------------------------
 main :: IO ()
 main = do
-    -- Fractal Art blog image generation
-    pwd <- getCurrentDirectory
+    -- Check for new blog posts and
+    -- generate images
+    generateBlogPostImages
 
-    let imageDirectory = pwd </> "static" </> "img/"
-        postsDirectory = pwd </> "posts/"
-
-    posts <- listDirectory postsDirectory
-    allImages <- listDirectory imageDirectory
-    let cleanedPosts = removeDSStore posts
-        cleanedImages = removeDSStore allImages
-        imgNames = imageNames cleanedPosts
-        imgsToGen = imageNamesToGenerate cleanedImages imgNames
-
-    -- Specify image names in each blog post markdown
-    filesWrittenTo <- sequence $ (writeHeaderImg postsDirectory) <$> cleanedPosts
-
-    -- Print which files were written to
-    let writF = writtenFiles filesWrittenTo
-    if length writF > 0 then do
-        putStrLn "Wrote header images to the follows blog posts:"
-        mapM_ print writF
-        putStrLn ""
-    else return ()
-
-    -- Generate image if it doesn't exist
-    let imgsToGenFps = (imageDirectory++) <$> imgsToGen
-    sequence_ $ generateArt <$> imgsToGenFps
-
-    -- Print which images were generated
-    if length imgsToGenFps > 0 then do
-        putStrLn "Generated the following images:"
-        mapM_ print imgsToGen
-        putStrLn ""
-    else return ()
-    
     -- Compile hakyll static site
     compileStaticSite
 
@@ -96,6 +65,43 @@ writeHeaderImg wd fp = do
               insertAt n s xs = fs ++ [s] ++ ls
                   where fs = take n xs
                         ls = drop n xs
+
+generateBlogPostImages :: IO ()
+generateBlogPostImages = do
+    -- Fractal Art blog image generation
+    pwd <- getCurrentDirectory
+
+    let imageDirectory = pwd </> "static" </> "img/"
+        postsDirectory = pwd </> "posts/"
+
+    posts <- listDirectory postsDirectory
+    allImages <- listDirectory imageDirectory
+    let cleanedPosts = removeDSStore posts
+        cleanedImages = removeDSStore allImages
+        imgNames = imageNames cleanedPosts
+        imgsToGen = imageNamesToGenerate cleanedImages imgNames
+
+    -- Specify image names in each blog post markdown
+    filesWrittenTo <- sequence $ (writeHeaderImg postsDirectory) <$> cleanedPosts
+
+    -- Print which files were written to
+    let writF = writtenFiles filesWrittenTo
+    if length writF > 0 then do
+        putStrLn "Wrote header images to the follows blog posts:"
+        mapM_ print writF
+        putStrLn ""
+    else return ()
+
+    -- Generate image if it doesn't exist
+    let imgsToGenFps = (imageDirectory++) <$> imgsToGen
+    sequence_ $ generateArt <$> imgsToGenFps
+
+    -- Print which images were generated
+    if length imgsToGenFps > 0 then do
+        putStrLn "Generated the following images:"
+        mapM_ print imgsToGen
+        putStrLn ""
+    else return ()
 
 compileStaticSite :: IO () 
 compileStaticSite = hakyll $ do
